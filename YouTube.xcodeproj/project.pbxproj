@@ -16,6 +16,9 @@
 		8610E29E2053E4C1009211D1 /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610E29D2053E4C1009211D1 /* VideoCell.swift */; };
 		8610E2A02054FD7D009211D1 /* MenuBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610E29F2054FD7D009211D1 /* MenuBar.swift */; };
 		8610E2A320551DBE009211D1 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610E2A220551DBE009211D1 /* Video.swift */; };
+		8610E2A52055A148009211D1 /* SettingsLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610E2A42055A148009211D1 /* SettingsLauncher.swift */; };
+		8610E2A72055ABC7009211D1 /* SetttingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610E2A62055ABC7009211D1 /* SetttingCell.swift */; };
+		8610E2A92055AC69009211D1 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8610E2A82055AC69009211D1 /* Setting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		8610E29D2053E4C1009211D1 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		8610E29F2054FD7D009211D1 /* MenuBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBar.swift; sourceTree = "<group>"; };
 		8610E2A220551DBE009211D1 /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		8610E2A42055A148009211D1 /* SettingsLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLauncher.swift; sourceTree = "<group>"; };
+		8610E2A62055ABC7009211D1 /* SetttingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetttingCell.swift; sourceTree = "<group>"; };
+		8610E2A82055AC69009211D1 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 			children = (
 				8610E29D2053E4C1009211D1 /* VideoCell.swift */,
 				8610E29F2054FD7D009211D1 /* MenuBar.swift */,
+				8610E2A62055ABC7009211D1 /* SetttingCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				8610E28820538709009211D1 /* HomeController.swift */,
+				8610E2A42055A148009211D1 /* SettingsLauncher.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -104,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				8610E2A220551DBE009211D1 /* Video.swift */,
+				8610E2A82055AC69009211D1 /* Setting.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -183,9 +192,12 @@
 				8610E28920538709009211D1 /* HomeController.swift in Sources */,
 				8610E2A320551DBE009211D1 /* Video.swift in Sources */,
 				8610E29E2053E4C1009211D1 /* VideoCell.swift in Sources */,
+				8610E2A52055A148009211D1 /* SettingsLauncher.swift in Sources */,
 				8610E29A2053E376009211D1 /* Extensions.swift in Sources */,
 				8610E28720538709009211D1 /* AppDelegate.swift in Sources */,
 				8610E2A02054FD7D009211D1 /* MenuBar.swift in Sources */,
+				8610E2A72055ABC7009211D1 /* SetttingCell.swift in Sources */,
+				8610E2A92055AC69009211D1 /* Setting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

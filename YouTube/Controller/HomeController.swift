@@ -63,7 +63,10 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
                     self.videos?.append(video)
                 }
                 
-                self.collectionView?.reloadData()
+                DispatchQueue.main.async{
+                    self.collectionView?.reloadData()
+                }
+                
                 
             } catch let jsonError {
                 print(jsonError)
@@ -105,10 +108,13 @@ class HomeController: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         navigationItem.rightBarButtonItems = [moreButton, searchBarButtonItem]
     }
-    
+   
+    let settingLauncher = SettingsLauncher()
     @objc func handleMore() {
-        
+        //show menu
+       settingLauncher.showSettings()
     }
+
     
     @objc func handleSearch() {
         print(123)
