@@ -2,12 +2,32 @@
 //  SettingsLauncher.swift
 //  YouTube
 //
-//  Created by Lei Liu on 2018/3/11.
+//  Created by Lei Liu on 2018/3/9.
 //  Copyright © 2018年 Lei Liu. All rights reserved.
 //
 
 import UIKit
-class SettingsLauncher: UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+class Setting: NSObject {
+    let name: SettingName
+    let imageName: String
+    
+    init(name: SettingName, imageName: String) {
+        self.name = name
+        self.imageName = imageName
+    }
+}
+
+enum SettingName: String {
+    case Cancel = "Cancel & Dismiss Completely"
+    case Settings = "Settings"
+    case TermsPrivacy = "Terms & privacy policy"
+    case SendFeedback = "Send Feedback"
+    case Help = "Help"
+    case SwitchAccount = "Switch Account"
+}
+
+class SettingsLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     let blackView = UIView()
     
@@ -22,8 +42,13 @@ class SettingsLauncher: UIView, UICollectionViewDataSource, UICollectionViewDele
     let cellHeight: CGFloat = 50
     
     let settings: [Setting] = {
-        return [Setting(name: "Settings", imageName: "settings"), Setting(name: "Terms & privacy policy", imageName: "privacy"), Setting(name: "Send Feedback", imageName: "feedback"), Setting(name: "Help", imageName: "help"), Setting(name: "Switch Account", imageName: "switch_account"), Setting(name: "Cancel", imageName: "cancel")]
+        let settingsSetting = Setting(name: .Settings, imageName: "settings")
+        
+        let cancelSetting = Setting(name: .Cancel, imageName: "cancel")
+        return [settingsSetting, Setting(name: .TermsPrivacy, imageName: "privacy"), Setting(name: .SendFeedback, imageName: "feedback"), Setting(name: .Help, imageName: "help"), Setting(name: .SwitchAccount, imageName: "switch_account"), cancelSetting]
     }()
+    
+    var homeController: HomeController?
     
     func showSettings() {
         //show menu
@@ -51,16 +76,22 @@ class SettingsLauncher: UIView, UICollectionViewDataSource, UICollectionViewDele
                 
                 self.collectionView.frame = CGRect(x: 0, y: y, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
                 
-            }, completion: nil)
+                }, completion: nil)
         }
     }
     
-    @objc func handleDismiss() {
-        UIView.animate(withDuration: 0.5) {
+    func handleDismiss(_ setting: Setting) {
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
+            
             self.blackView.alpha = 0
             
             if let window = UIApplication.shared.keyWindow {
                 self.collectionView.frame = CGRect(x: 0, y: window.frame.height, width: self.collectionView.frame.width, height: self.collectionView.frame.height)
+            }
+            
+        }) { (completed: Bool) in
+            if setting.name != .Cancel {
+                self.homeController?.showControllerForSetting(setting)
             }
         }
     }
@@ -86,18 +117,26 @@ class SettingsLauncher: UIView, UICollectionViewDataSource, UICollectionViewDele
         return 0
     }
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let setting = self.settings[indexPath.item]
+        handleDismiss(setting)
+    }
+    
+    override init() {
+        super.init()
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
         collectionView.register(SettingCell.self, forCellWithReuseIdentifier: cellId)
     }
     
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
 }
+
+
+
+
+
+
+
