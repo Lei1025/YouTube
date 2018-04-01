@@ -14,11 +14,11 @@ Developed paging functions that pages can be switched by swip or icon tap
 
 The method how to control icon in navigation bar, menubar under each icon and subcell of collecionview to show off as following:
 
-  icon(indexpath.item)-->menubar(x value)
-  
-  icon(indexpath.item)-->collectionview(scroolToItemAtIndexpath)
-  
-  collectionview(contentOffSet.x)-->menubar(x value)
-  
-  collectionview(scroolViewWillEndDragging)-->icon(indexpath.item)
+    icon(indexpath.item)-->menubar(x value)
+
+    icon(indexpath.item)-->collectionview(scroolToItemAtIndexpath)
+
+    collectionview(contentOffSet.x)-->menubar(x value)
+
+    collectionview(scroolViewWillEndDragging)-->icon(indexpath.item)
 
