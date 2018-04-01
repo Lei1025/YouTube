@@ -22,3 +22,10 @@ The method how to control icon in navigation bar, menubar under each icon and su
 
     collectionview(scroolViewWillEndDragging)-->icon(indexpath.item)
 
+# Screen shots
+
+<img src="https://github.com/Lei1025/YouTube/blob/master/MainPage.png" width="300">
+<br>
+<img src="https://github.com/Lei1025/YouTube/blob/master/Menu.png" width="300">
+<br>
+<img src="https://github.com/Lei1025/YouTube/blob/master/Player.png" width="300">
