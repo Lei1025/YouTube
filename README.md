@@ -4,6 +4,14 @@ A video player application that includes mixed information display, paging and v
 
 # Skills Used
 
+Cleaned up codes implementing of MVC
+
+Built home feed layout by uicollectionview
+
+Customized navigation bar and status bar
+
+Created a slide in setting menu
+
 Integrating a REST API, JSON via NSURLSession
 
 Created a slide in menu by UICollectionView and UIView animation
